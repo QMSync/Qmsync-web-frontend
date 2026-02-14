@@ -7,15 +7,20 @@ import Navbar from './Navbar'
 
 interface DocToolLayoutProps {
   children: React.ReactNode
+  onPdfUploadClick?: () => void
 }
 
-export default function DocToolLayout({ children }: DocToolLayoutProps) {
+export default function DocToolLayout({ children, onPdfUploadClick }: DocToolLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [rightSidebarOpen, setRightSidebarOpen] = useState(false)
 
   return (
     <div className="h-screen bg-gray-50 flex overflow-hidden">
-      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+      <Sidebar 
+        sidebarOpen={sidebarOpen} 
+        setSidebarOpen={setSidebarOpen} 
+        onPdfUploadClick={onPdfUploadClick || (() => {})} 
+      />
       
       {/* Main content area */}
       <div className="flex-1 flex flex-col h-screen min-w-0">
