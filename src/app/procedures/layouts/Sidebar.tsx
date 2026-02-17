@@ -29,11 +29,11 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }: SidebarProps) {
         </div>
 
         <nav className="flex-1 px-2 py-3 space-y-1 overflow-y-auto">
-          <Link href="/training" onClick={() => setSidebarOpen(false)} className={`w-full flex items-center gap-1.5 px-2 py-1.5 rounded-md transition-colors duration-200 ${isActive('/training') ? 'text-blue-700 bg-blue-50' : 'text-gray-700 hover:bg-blue-500 hover:text-white'}`}>
+          <Link href="/procedures" onClick={() => setSidebarOpen(false)} className={`w-full flex items-center gap-1.5 px-2 py-1.5 rounded-md transition-colors duration-200 ${isActive('/procedures') ? 'text-blue-700 bg-blue-50' : 'text-gray-700 hover:bg-blue-500 hover:text-white'}`}>
             <span className="font-medium text-xs">Dashboard</span>
           </Link>
-          <Link href="/training/records" onClick={() => setSidebarOpen(false)} className={`w-full flex items-center gap-1.5 px-2 py-1.5 rounded-md transition-colors duration-200 ${isActive('/training/records') ? 'text-blue-700 bg-blue-50' : 'text-gray-700 hover:bg-blue-500 hover:text-white'}`}>
-            <span className="font-medium text-xs">Records</span>
+          <Link href="/doc-tools" onClick={() => setSidebarOpen(false)} className={`w-full flex items-center gap-1.5 px-2 py-1.5 rounded-md transition-colors duration-200 text-gray-700 hover:bg-blue-500 hover:text-white`}>
+            <span className="font-medium text-xs">Create Document</span>
           </Link>
         </nav>
       </div>

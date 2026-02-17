@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { FileText, AlertTriangle, ClipboardList, Lock, Package, Wrench, Users, User } from 'lucide-react'
+import { FileText, AlertTriangle, ClipboardList, Lock, Package, Wrench, Users, User, BookOpen } from 'lucide-react'
 
 export default function QAConsole() {
   const [showAppMenu, setShowAppMenu] = useState(false)
@@ -11,13 +11,15 @@ export default function QAConsole() {
   const userApps = [
     { name: 'Change Requests', icon: FileText, href: '/change-requests', hasAccess: true, description: 'Submit and track change requests for processes and documents', color: '#0072AA' },
     { name: 'Deviation', icon: AlertTriangle, href: '/deviation', hasAccess: true, description: 'Report and manage deviations from standard procedures', color: '#21AA47' },
-    { name: 'Doc Tool', icon: ClipboardList, href: '/doc-tools', hasAccess: true, description: 'Create, edit, and manage quality documentation', color: '#0072AA' },
+    { name: 'Procedures/SOPs', icon: ClipboardList, href: '/procedures', hasAccess: true, description: 'Manage procedures, SOPs, and document approvals', color: '#0072AA' },
+    { name: 'Formats & Annexures', icon: BookOpen, href: '/formats-annexures', hasAccess: true, description: 'Upload, print annexures and create books from formats', color: '#0072AA' },
   ]
 
   const allApps = [
     { name: 'Change Requests', icon: FileText, href: '/change-requests', hasAccess: true },
     { name: 'Deviation', icon: AlertTriangle, href: '/deviation', hasAccess: true },
-    { name: 'Doc Tool', icon: ClipboardList, href: '/doc-tools', hasAccess: true },
+    { name: 'Procedures/SOPs', icon: ClipboardList, href: '/procedures', hasAccess: true },
+    { name: 'Formats & Annexures', icon: BookOpen, href: '/formats-annexures', hasAccess: true },
     { name: 'Goods Receipt', icon: Package, href: '/goods', hasAccess: false },
     { name: 'Training', icon: Users, href: '/training', hasAccess: false },
     { name: 'Equipment', icon: Wrench, href: '/equipment', hasAccess: false },

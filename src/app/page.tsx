@@ -1,6 +1,24 @@
+'use client'
+
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 export default function Home() {
+  const router = useRouter()
+  
+  useEffect(() => {
+    // Redirect to login in production
+    if (process.env.NODE_ENV === 'production') {
+      router.push('/login')
+    }
+  }, [])
+
+  // Show home page in development
+  if (process.env.NODE_ENV === 'production') {
+    return null
+  }
+
   return (
     <div className="min-h-screen flex bg-gray-50">
       {/* Left - Modules */}

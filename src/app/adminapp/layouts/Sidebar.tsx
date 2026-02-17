@@ -17,11 +17,11 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }: SidebarProps) {
       sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
     }`}>
       <div className="h-full flex flex-col">
-        <div className="h-12 flex items-center justify-between px-4 border-b border-gray-200">
+        <div className="h-12 flex items-center justify-between px-4 border-b border-gray-200" style={{backgroundColor: '#0072AA'}}>
           <Link href="/" className="flex items-center">
-            <span className="text-lg font-bold text-blue-600">QMSync</span>
+            <span className="text-lg font-bold text-white" style={{fontFamily: 'Inter, sans-serif'}}>QMSync</span>
           </Link>
-          <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-gray-500 hover:text-gray-700">
+          <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-white hover:text-gray-200">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
