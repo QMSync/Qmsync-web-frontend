@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   output: 'standalone',
+  experimental: {
+    dynamicIO: true,
+  },
 };
 
 export default nextConfig;
