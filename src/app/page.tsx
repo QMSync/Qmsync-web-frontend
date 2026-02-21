@@ -35,7 +35,7 @@ export default function Home() {
           })
           setStep('verify-email')
         } else {
-          router.push(`/${data.department}`)
+          router.push(`/${data.department.toLowerCase()}`)
         }
       } else {
         setError('Invalid username or password')
@@ -95,7 +95,7 @@ export default function Home() {
           credentials: 'include'
         })
         const authData = await authResponse.json()
-        router.push(`/${authData.user.department}`)
+        router.push(`/${authData.user.department.toLowerCase()}`)
       } else {
         setError('Invalid verification code')
       }
