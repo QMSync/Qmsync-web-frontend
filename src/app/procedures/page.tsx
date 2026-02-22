@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import ProceduresLayout from './layouts/ProceduresLayout'
 import ProcedureForm from './components/ProcedureForm'
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL
+
 interface Procedure {
   id: number
   document_number: string
@@ -45,7 +47,7 @@ export default function Procedures() {
 
   const fetchProcedures = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/procedures/procedures/')
+      const response = await fetch(`${API_URL}/api/procedures/procedures/`)
       if (response.ok) {
         const data = await response.json()
         setProcedures(data)
@@ -57,7 +59,7 @@ export default function Procedures() {
 
   const fetchAnnexures = async (procedureId: number) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/procedures/annexures/?procedure=${procedureId}`)
+      const response = await fetch(`${API_URL}/api/procedures/annexures/?procedure=${procedureId}`)
       if (response.ok) {
         const data = await response.json()
         setAnnexures(data)
@@ -91,7 +93,7 @@ export default function Procedures() {
     if (!confirm('Are you sure you want to delete this procedure?')) return
     
     try {
-      const response = await fetch(`http://localhost:8000/api/procedures/procedures/${id}/`, {
+      const response = await fetch(`${API_URL}/api/procedures/procedures/${id}/`, {
         method: 'DELETE',
         credentials: 'include'
       })
@@ -115,7 +117,7 @@ export default function Procedures() {
     formData.append('file', newAnnexure.file)
 
     try {
-      const response = await fetch('http://localhost:8000/api/procedures/annexures/', {
+      const response = await fetch(`${API_URL}/api/procedures/annexures/`, {
         method: 'POST',
         credentials: 'include',
         body: formData
@@ -403,7 +405,7 @@ export default function Procedures() {
                       <td className="px-4 py-2">{ann.footer_number}</td>
                       <td className="px-4 py-2">{ann.usage}</td>
                       <td className="px-4 py-2">
-                        <a href={`http://localhost:8000${ann.file}`} target="_blank" className="text-blue-600 hover:underline text-xs">View PDF</a>
+                        <a href={`${API_URL}${ann.file}`} target="_blank" className="text-blue-600 hover:underline text-xs">View PDF</a>
                       </td>
                     </tr>
                   ))}
