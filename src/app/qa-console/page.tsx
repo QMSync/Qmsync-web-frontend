@@ -13,6 +13,7 @@ export default function QAConsole() {
     { name: 'Deviation', icon: AlertTriangle, href: '/deviation', hasAccess: true, description: 'Report and manage deviations from standard procedures', color: '#21AA47' },
     { name: 'Procedures/SOPs', icon: ClipboardList, href: '/procedures', hasAccess: true, description: 'Manage procedures, SOPs, and document approvals', color: '#0072AA' },
     { name: 'Formats & Annexures', icon: BookOpen, href: '/formats-annexures', hasAccess: true, description: 'Upload, print annexures and create books from formats', color: '#0072AA' },
+    { name: 'Goods Receipt', icon: Package, href: '/goods', hasAccess: true, description: 'Manage goods receipt notes and inventory', color: '#21AA47' },
   ]
 
   const allApps = [
@@ -20,7 +21,7 @@ export default function QAConsole() {
     { name: 'Deviation', icon: AlertTriangle, href: '/deviation', hasAccess: true },
     { name: 'Procedures/SOPs', icon: ClipboardList, href: '/procedures', hasAccess: true },
     { name: 'Formats & Annexures', icon: BookOpen, href: '/formats-annexures', hasAccess: true },
-    { name: 'Goods Receipt', icon: Package, href: '/goods', hasAccess: false },
+    { name: 'Goods Receipt', icon: Package, href: '/goods', hasAccess: true },
     { name: 'Training', icon: Users, href: '/training', hasAccess: false },
     { name: 'Equipment', icon: Wrench, href: '/equipment', hasAccess: false },
   ]
